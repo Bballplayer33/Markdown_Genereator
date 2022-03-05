@@ -63,10 +63,8 @@ function generateMarkdown(data) {
     ${test}
   
   ## Questions? reach out!
-      ![Github](${github})
-      ![Click to Email me](${email})
-
-
+      [Github](${github})
+      [Click to Email me](mailto:${email})
 `;
 }
 
