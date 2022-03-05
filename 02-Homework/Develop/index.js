@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown')
 // TODO: Create an array of questions for user input
  inquirer
   .prompt( [
@@ -30,9 +31,10 @@ const fs = require('fs');
         message: 'Have any collaborators? Please list them here.',
       },
       {
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: '',
+        message: 'Choose your license',
+        choices: ['Apache 2.0', 'MIT', 'Mozilla', 'IBM', 'None']
       },
       {
         type: 'input',
@@ -51,41 +53,16 @@ const fs = require('fs');
       },
    ])
    .then((answers) => {
-    const ReadMePageContent = generateMD(answers);
+    const ReadMePageContent = generateMarkdown(answers);
 
     fs.writeFile('README.md', ReadMePageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
+      err ? console.log(err) : console.log('Successfully created README file!')
     );
   });
 
 
 // TODO: Create a function to write README file
-const generateMD = ({ name, discribtion, installation, usage, credits, license, test, github, email}) =>
-`<!DOCTYPE md>
-  # ${name}
 
-  ## Discription
-    ${discribtion}
-  
-  ## Installation
-    ${installation}
-  
-  ## Usage
-    ${usage}
-  
-  ## Credits
-    ${credits}
-  
-  ## License
-    ${license}
-
-  ## Tests
-    ${test}
-  
-  ## Questions? reach out!
-      [Github](${github})
-      [Click to Email me](${email})
-`; 
 
 // TODO: Create a function to initialize app
 // const init = () => {
@@ -97,4 +74,4 @@ const generateMD = ({ name, discribtion, installation, usage, credits, license, 
 
 
 // Function call to initialize app
-init();
+//init();
