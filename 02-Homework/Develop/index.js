@@ -33,7 +33,7 @@ const generateMarkdown = require('./utils/generateMarkdown')
       {
         type: 'list',
         name: 'license',
-        message: 'Choose your license',
+        message: 'Choose your license:',
         choices: ['Apache 2.0', 'MIT', 'Mozilla', 'IBM', 'None']
       },
       {
@@ -44,12 +44,12 @@ const generateMarkdown = require('./utils/generateMarkdown')
       {
         type: 'input',
         name: 'github',
-        message: 'Please enter your Github',
+        message: 'Please enter your Github username:',
       },
       {
         type: 'input',
         name: 'email',
-        message: 'Please Enter your Email',
+        message: 'Please Enter your Email:',
       },
    ])
    .then((answers) => {

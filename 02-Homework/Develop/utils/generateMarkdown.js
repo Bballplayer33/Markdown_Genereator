@@ -71,7 +71,7 @@ function generateMarkdown(data) {
     ${test}
   
   ## Questions? reach out!
-      [Github](${github})
+      [Github](github.com/${github})
       [Click to Email me](mailto:${email})
 `;
 }
