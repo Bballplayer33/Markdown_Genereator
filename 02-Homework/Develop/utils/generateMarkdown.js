@@ -30,8 +30,8 @@ function renderLicenseLink(license) {
     return '';
   }
   else {
-    return ` ## License
-    ${license}`
+    return ` * [License](#license)
+    `
   };
 }
 
@@ -55,6 +55,14 @@ function generateMarkdown(data) {
 
   ## Discription
     ${discribtion}
+
+  ##Table of Contents
+    * [Install](#install)
+    * [Usage](#usage)
+    * ${renderLicenseLink}
+    * [contribute](#contribute)
+    * [Test](#test)
+  
   
   ## Installation
     ${installation}
